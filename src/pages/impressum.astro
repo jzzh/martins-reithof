@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import { site } from "../data/site";
+---
+
+<Layout
+  title="Impressum | Martin's Reithof"
+  description="Impressum und Kontaktangaben von Martin's Reithof in Rümlang."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--cream)">
+        <Icon name="info" size={15} /> Rechtliches
+      </span>
+      <h1>Impressum</h1>
+      <p>Angaben gemäss den in der Schweiz geltenden Transparenzvorschriften.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>
+          {site.name}<br />
+          Inhaber: {site.owner}<br />
+          {site.address.street}<br />
+          {site.address.zip} {site.address.city}<br />
+          {site.address.country}
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          Telefon: <a href={site.phoneStable.href}>{site.phoneStable.label}</a><br />
+          E-Mail: <a href={site.email.href}>{site.email.label}</a>
+        </p>
+
+        <h2>Haftungsausschluss</h2>
+        <p>
+          Für Schäden und Unfälle auf dem Gelände wird jede Haftung abgelehnt.
+          Die Unfall- und Haftpflichtversicherung ist Sache der Reitperson.
+        </p>
+        <p>
+          Die Inhalte dieser Website werden mit grösstmöglicher Sorgfalt
+          erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
+          Inhalte sowie für Inhalte externer Links wird keine Gewähr
+          übernommen.
+        </p>
+
+        <h2>Urheberrecht</h2>
+        <p>
+          Alle Inhalte und Bilder dieser Website sind urheberrechtlich geschützt.
+          Eine Verwendung ohne vorgängige schriftliche Zustimmung ist nicht
+          erlaubt.
+        </p>
+
+        <a class="back-link" href="/">
+          <Icon name="arrowLeft" size={18} />
+          Zurück zur Startseite
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

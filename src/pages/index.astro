@@ -1,0 +1,394 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import {
+  site,
+  offers,
+  priceGroups,
+  openingHours,
+} from "../data/site";
+
+const mapQuery = encodeURIComponent(
+  `${site.address.street}, ${site.address.zip} ${site.address.city}`
+);
+const mapEmbed = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+const mapLink = `https://maps.google.com/?q=${mapQuery}`;
+
+const ponyclub = offers.find((o) => o.id === "ponyclub")!;
+const reitlager = offers.find((o) => o.id === "reitlager")!;
+const serviceOffers = offers.filter(
+  (o) => o.id !== "ponyclub" && o.id !== "reitlager"
+);
+---
+
+<Layout>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <span class="eyebrow hero__eyebrow">
+        <Icon name="horseshoe" size={16} /> Reiterhof in Rümlang
+      </span>
+      <h1>Reiten, Spiel & Spass auf Martin's Reithof</h1>
+      <p class="hero__lead">
+        Ponyreiten, Ausritte, Ponyclub, Reitlager und mehr – hier lernen
+        Kinder und Erwachsene den angstfreien Umgang mit Ponys und Pferden.
+        Bei uns ist jeder herzlich willkommen.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--accent" href="#angebote">
+          Unsere Angebote <Icon name="arrow" size={17} />
+        </a>
+        <a class="btn btn--ghost" href="#kontakt">
+          <Icon name="pin" size={17} /> Kontakt & Anfahrt
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AKTUELLES / REITLAGER ===================== -->
+  <section class="section" id="aktuelles">
+    <div class="container">
+      <div class="event reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--white)">
+            <Icon name="calendar" size={15} /> Aktuelles
+          </span>
+          <h2>Herbst-Reitlager 2026</h2>
+          <p class="event__lead">
+            Erlebe eine unvergessliche Woche rund um Pferde, Spiel und Spass in
+            den Herbstferien – mit zweimal täglich Reiten und einem
+            altersgerechten, abwechslungsreichen Programm.
+          </p>
+          <ul class="event__meta">
+            <li>
+              <Icon name="calendar" size={19} />
+              <span>12. – 16. Oktober 2026, Montag – Freitag</span>
+            </li>
+            <li>
+              <Icon name="clock" size={19} />
+              <span>täglich 09:00 – 17:00 Uhr</span>
+            </li>
+            <li>
+              <Icon name="info" size={19} />
+              <span>Freitag 16:30 Uhr Apéro für Kinder und Eltern</span>
+            </li>
+            <li>
+              <Icon name="shield" size={19} />
+              <span>Durchführung ab 8 verbindlichen Buchungen</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event__side">
+          <p class="price-tag">
+            <small>Kosten pro Person</small>
+            CHF 550.–
+          </p>
+          <ul>
+            <li><Icon name="check" size={16} /> 2× täglich Reiten</li>
+            <li><Icon name="check" size={16} /> Inkl. Mittagessen & Zvieri</li>
+            <li><Icon name="check" size={16} /> Spiele, Bewegung & Grundwissen</li>
+            <li><Icon name="check" size={16} /> Wettergerechte Kleidung mitbringen</li>
+          </ul>
+          <a class="btn btn--accent" href={reitlager.cta!.href}>
+            <Icon name="phone" size={16} /> {reitlager.cta!.label}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ÜBER UNS ===================== -->
+  <section class="section" id="ueber-uns">
+    <div class="container about">
+      <div class="about__text reveal">
+        <span class="eyebrow"><Icon name="horseshoe" size={15} /> Über uns</span>
+        <h2>Ein Hof zum Wohlfühlen</h2>
+        <p>
+          Martin's Reithof ist ein kleiner, familiärer Reiterhof in Rümlang bei
+          Zürich. Bei uns stehen braven Ponys und ausgewählte Pferde für
+          Einsteiger bis Fortgeschrittene bereit. Die Kinder lernen spielerisch
+          und mit viel Spass den Umgang mit den Tieren.
+        </p>
+        <p>
+          Der Umgang mit Ponys unterstützt Selbstbewusstsein, Koordination und
+          Beweglichkeit. Ob erste Reitversuche, ein Ausritt in den nahegelegenen
+          Wald oder ein unvergessliches Reitlager – wir begleiten dich mit
+          Freude.
+        </p>
+
+        <div class="values">
+          <div class="value">
+            <Icon name="heart" size={22} />
+            <div>
+              <h3>Fairness</h3>
+              <p>Respektvoller Umgang mit Mensch und Tier.</p>
+            </div>
+          </div>
+          <div class="value">
+            <Icon name="users" size={22} />
+            <div>
+              <h3>Respekt</h3>
+              <p>Angstfreies Lernen im eigenen Tempo.</p>
+            </div>
+          </div>
+          <div class="value">
+            <Icon name="star" size={22} />
+            <div>
+              <h3>Leidenschaft</h3>
+              <p>Mit Herz bei der Sache – seit jeher.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__media reveal">
+        <img
+          class="about__photo"
+          src="/images/martin-foto-2.png"
+          alt="Martin mit einem Pferd"
+          width="293"
+          height="465"
+          loading="lazy"
+        />
+        <div class="about__badge">
+          <span>Inhaber</span>
+          {site.owner}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ANGEBOTE ===================== -->
+  <section class="section section--tint" id="angebote">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><Icon name="horseshoe" size={15} /> Angebote</span>
+        <h2>Für Gross und Klein</h2>
+        <div class="divider"><Icon name="horseshoe" size={18} /></div>
+        <p>
+          Vom ersten Ponykontakt bis zum Ausritt in die Natur – finde das
+          passende Angebot für dich oder dein Kind.
+        </p>
+      </div>
+
+      <div class="cards">
+        {serviceOffers.map((offer) => (
+          <article class="card reveal">
+            <span class="card__icon"><Icon name={offer.icon} size={26} /></span>
+            <h3>{offer.title}</h3>
+            <p class="card__text">{offer.text}</p>
+            {offer.highlight && <p class="card__highlight">{offer.highlight}</p>}
+            {offer.details && (
+              <ul>
+                {offer.details.map((d) => <li>{d}</li>)}
+              </ul>
+            )}
+            {offer.cta && (
+              <div class="card__cta">
+                <a class="btn btn--outline btn--sm" href={offer.cta.href}>
+                  <Icon name="phone" size={15} /> {offer.cta.label}
+                </a>
+              </div>
+            )}
+          </article>
+        ))}
+
+        <article class="card card--featured reveal">
+          <span class="card__icon"><Icon name={ponyclub.icon} size={26} /></span>
+          <h3>{ponyclub.title}</h3>
+          <p class="card__text">{ponyclub.text}</p>
+          {ponyclub.details && (
+            <ul>
+              {ponyclub.details.map((d) => <li>{d}</li>)}
+            </ul>
+          )}
+          {ponyclub.cta && (
+            <div class="card__cta">
+              <a class="btn btn--primary" href={ponyclub.cta.href}>
+                <Icon name="phone" size={16} /> {ponyclub.cta.label}
+              </a>
+            </div>
+          )}
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PREISE ===================== -->
+  <section class="section" id="preise">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><Icon name="coins" size={15} /> Preisliste</span>
+        <h2>Transparente Preise</h2>
+        <div class="divider"><Icon name="horseshoe" size={18} /></div>
+      </div>
+
+      <div class="price-layout">
+        {priceGroups.map((group) => (
+          <div class="price-card reveal">
+            <h3>{group.title}</h3>
+            {group.rows.map((row) => (
+              <div class="price-row">
+                <span>{row.label}</span>
+                <strong>{row.price}</strong>
+              </div>
+            ))}
+            {group.note && <p class="price-note">{group.note}</p>}
+          </div>
+        ))}
+
+        <aside class="price-aside reveal">
+          <span class="badge-pill"><Icon name="star" size={14} /> {ponyclub.title}</span>
+          <h3>Jeden Mittwoch, 13:30 – 16:00 Uhr</h3>
+          <p class="price-note">
+            Für ponybegeisterte Kinder von 5 – 12 Jahren. Inkl. Zvieri.
+          </p>
+          <div class="price-row">
+            <span>Pro Kind</span>
+            <strong>CHF 60.00</strong>
+          </div>
+          <div class="price-row">
+            <span>Anmeldung</span>
+            <strong>{site.phoneMartin.label}</strong>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ÖFFNUNGSZEITEN ===================== -->
+  <section class="section section--tint" id="oeffnungszeiten">
+    <div class="container hours-wrap">
+      <div class="hours-content reveal">
+        <span class="eyebrow"><Icon name="clock" size={15} /> Öffnungszeiten</span>
+        <h2 style="font-size: clamp(1.9rem, 4.6vw, 2.9rem); margin-top: .55rem;">
+          Wann wir für euch da sind
+        </h2>
+        <p style="color: var(--ink-soft); margin-top: 1rem; max-width: 46ch;">
+          Komm einfach vorbei oder melde dich telefonisch für eine Buchung.
+          Wir freuen uns auf deinen Besuch.
+        </p>
+
+        <div class="hours-card" style="margin-top: 1.6rem;">
+          <dl class="hours-list">
+            {openingHours.map((row) => (
+              <div class="hours-row">
+                <dt>{row.day}</dt>
+                <dd>{row.time}</dd>
+              </div>
+            ))}
+          </dl>
+          <div class="hours-note">
+            <Icon name="info" size={20} />
+            <span>
+              Termine für Ausritte, Spaziergänge und Ponyclub bitte vorgängig
+              telefonisch vereinbaren.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIE ===================== -->
+  <section class="section section--tint" id="galerie">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><Icon name="horseshoe" size={15} /> Galerie</span>
+        <h2>Momente vom Hof</h2>
+        <div class="divider"><Icon name="horseshoe" size={18} /></div>
+      </div>
+      <div class="gallery">
+        <div class="gallery__item gallery__item--wide"><span>Weide</span></div>
+        <div class="gallery__item"><span>Reitstunde</span></div>
+        <div class="gallery__item"><span>Ausritt</span></div>
+        <div class="gallery__item"><span>Voltige</span></div>
+        <div class="gallery__item"><span>Ponyclub</span></div>
+        <div class="gallery__item gallery__item--wide"><span>Reitlager</span></div>
+        <div class="gallery__item"><span>Ponys</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KONTAKT ===================== -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><Icon name="pin" size={15} /> Kontakt & Anfahrt</span>
+        <h2>Wir freuen uns auf dich</h2>
+        <div class="divider"><Icon name="horseshoe" size={18} /></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <ul class="contact-list">
+            <li>
+              <Icon name="pin" size={22} />
+              <div>
+                <strong>Adresse</strong>
+                <a href={mapLink} target="_blank" rel="noopener">
+                  {site.address.street}, {site.address.zip} {site.address.city}
+                </a>
+              </div>
+            </li>
+            <li>
+              <Icon name="phone" size={22} />
+              <div>
+                <strong>Telefon</strong>
+                <a href={site.phoneStable.href}>{site.phoneStable.label}</a>
+              </div>
+            </li>
+            <li>
+              <Icon name="phone" size={22} />
+              <div>
+                <strong>Martin (Ponyclub & Reitlager)</strong>
+                <a href={site.phoneMartin.href}>{site.phoneMartin.label}</a>
+              </div>
+            </li>
+            <li>
+              <Icon name="mail" size={22} />
+              <div>
+                <strong>E-Mail</strong>
+                <a href={site.email.href}>{site.email.label}</a>
+              </div>
+            </li>
+            <li>
+              <Icon name="instagram" size={22} />
+              <div>
+                <strong>Instagram</strong>
+                <a href={site.instagram.href} target="_blank" rel="noopener">
+                  {site.instagram.label}
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact-actions">
+            <a class="btn btn--accent" href={site.phoneStable.href}>
+              <Icon name="phone" size={16} /> Jetzt anrufen
+            </a>
+            <a
+              class="btn btn--outline"
+              href={mapLink}
+              target="_blank"
+              rel="noopener"
+            >
+              <Icon name="pin" size={16} /> Route planen
+            </a>
+          </div>
+        </div>
+
+        <div class="map reveal">
+          <iframe
+            src={mapEmbed}
+            title="Karte: Martin's Reithof, Rümlang"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

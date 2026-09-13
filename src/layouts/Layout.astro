@@ -1,0 +1,235 @@
+---
+import "../styles/global.css";
+import Icon from "../components/Icon.astro";
+import { site, nav } from "../data/site";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Reiterhof & Ponyreiten in Rümlang | Martin's Reithof",
+  description = "Martin's Reithof in Rümlang: Ponyreiten, Ausritte, Ponyclub, Reitlager, Pferdemiete und Kindergeburtstage. Herzlich willkommen – Fairness, Respekt, Leidenschaft.",
+} = Astro.props;
+
+const phoneE164 = "+41774481956";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: site.name,
+  description,
+  url: "https://www.martins-reithof.ch",
+  telephone: phoneE164,
+  email: site.email.label,
+  founder: site.owner,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    postalCode: site.address.zip,
+    addressLocality: site.address.city,
+    addressCountry: "CH",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1b2a4a" />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="de_CH" />
+    <meta property="og:site_name" content={site.name} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a class="brand" href="/" aria-label={`${site.name} Startseite`}>
+          <img
+            class="brand__logo"
+            src="/images/martins-reifhof-logo.png"
+            alt="Martin's Reithof"
+            width="301"
+            height="107"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Hauptnavigation">
+          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+
+        <a class="btn btn--accent btn--sm header__cta" href={site.phoneStable.href}>
+          <Icon name="phone" size={16} />
+          {site.phoneStable.display}
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+          aria-label="Menü öffnen"
+        >
+          <Icon name="menu" size={22} />
+        </button>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+      <a class="btn btn--accent" href={site.phoneStable.href}>
+        <Icon name="phone" size={16} />
+        Jetzt anrufen · {site.phoneStable.display}
+      </a>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__values">
+          <span><Icon name="horseshoe" size={22} /> Fairness</span>
+          <span><Icon name="horseshoe" size={22} /> Respekt</span>
+          <span><Icon name="horseshoe" size={22} /> Leidenschaft</span>
+        </div>
+
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a class="brand" href="/" aria-label={`${site.name} Startseite`}>
+              <img
+                class="brand__logo"
+                src="/images/martins-reifhof-logo-light.png"
+                alt="Martin's Reithof"
+                width="301"
+                height="107"
+              />
+            </a>
+            <p>
+              Familiärer Reiterhof in Rümlang. Ponys und Pferde für Einsteiger
+              bis Fortgeschrittene – bei uns ist jeder herzlich willkommen.
+            </p>
+          </div>
+
+          <div>
+            <h3>Navigation</h3>
+            <div class="footer__links">
+              {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+            </div>
+          </div>
+
+          <div>
+            <h3>Kontakt</h3>
+            <div class="footer__contact">
+              <a href={`https://maps.google.com/?q=${encodeURIComponent(
+                `${site.address.street}, ${site.address.zip} ${site.address.city}`
+              )}`} target="_blank" rel="noopener">
+                <Icon name="pin" size={18} />
+                <span>{site.address.street}, {site.address.zip} {site.address.city}</span>
+              </a>
+              <a href={site.phoneStable.href}>
+                <Icon name="phone" size={18} />
+                <span>{site.phoneStable.label}</span>
+              </a>
+              <a href={site.email.href}>
+                <Icon name="mail" size={18} />
+                <span>{site.email.label}</span>
+              </a>
+              <a href={site.instagram.href} target="_blank" rel="noopener">
+                <Icon name="instagram" size={18} />
+                <span>Instagram: {site.instagram.label}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span>
+            © {new Date().getFullYear()} {site.name} · {site.owner}
+          </span>
+          <nav aria-label="Rechtliches">
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const header = document.getElementById("header");
+      const onScroll = () => {
+        if (!header) return;
+        header.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const toggle = document.getElementById("navToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      if (toggle && mobileNav) {
+        const setOpen = (open) => {
+          toggle.setAttribute("aria-expanded", String(open));
+          mobileNav.classList.toggle("is-open", open);
+        };
+        toggle.addEventListener("click", () =>
+          setOpen(toggle.getAttribute("aria-expanded") !== "true")
+        );
+        mobileNav.querySelectorAll("a").forEach((link) =>
+          link.addEventListener("click", () => setOpen(false))
+        );
+      }
+
+      const reveals = document.querySelectorAll(".reveal");
+      if (reveals.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        );
+        reveals.forEach((el) => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>

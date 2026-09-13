@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import { site } from "../data/site";
+---
+
+<Layout
+  title="Datenschutz | Martin's Reithof"
+  description="Datenschutzerklärung von Martin's Reithof – Informationen zur Verarbeitung personenbezogener Daten."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--cream)">
+        <Icon name="shield" size={15} /> Rechtliches
+      </span>
+      <h1>Datenschutz</h1>
+      <p>Informationen zum Umgang mit personenbezogenen Daten.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <h2>Verantwortliche Stelle</h2>
+        <p>
+          {site.name}, {site.owner}, {site.address.street}, {site.address.zip}
+          {" "}{site.address.city}. E-Mail:
+          <a href={site.email.href}>{site.email.label}</a>.
+        </p>
+
+        <h2>Grundsatz</h2>
+        <p>
+          Diese Website kann grundsätzlich ohne Angabe personenbezogener Daten
+          besucht werden. Wir verarbeiten Personendaten nur, soweit dies zur
+          Beantwortung von Anfragen oder zur Erbringung unserer Leistungen
+          erforderlich ist und die gesetzlichen Vorgaben (insbesondere das
+          schweizerische Datenschutzgesetz, DSG) eingehalten werden.
+        </p>
+
+        <h2>Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie uns telefonisch oder per E-Mail kontaktieren, werden Ihre
+          Angaben zur Bearbeitung der Anfrage und für allfällige
+          Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre
+          Einwilligung weiter.
+        </p>
+
+        <h2>Hosting</h2>
+        <p>
+          Beim Aufruf dieser Website werden durch den Hosting-Anbieter
+          technische Zugriffsdaten (z. B. IP-Adresse, Datum und Uhrzeit,
+          abgerufene Seiten) in Server-Logfiles verarbeitet. Diese Daten dienen
+          dem sicheren und stabilen Betrieb der Website.
+        </p>
+
+        <h2>Karte (Google Maps)</h2>
+        <p>
+          Zur Darstellung des Standorts nutzen wir eine Karte von Google Maps.
+          Beim Laden der Karte können Daten an Google übertragen werden. Weitere
+          Informationen finden Sie in der Datenschutzerklärung von Google.
+        </p>
+
+        <h2>Schriftarten</h2>
+        <p>
+          Für die Darstellung der Website werden Schriftarten von Google Fonts
+          geladen. Dabei kann Ihre IP-Adresse an Google übermittelt werden.
+        </p>
+
+        <h2>Ihre Rechte</h2>
+        <p>
+          Sie haben das Recht, Auskunft über die zu Ihrer Person bearbeiteten
+          Daten zu verlangen sowie deren Berichtigung oder Löschung zu
+          beantragen. Wenden Sie sich dazu an die oben genannte Kontaktadresse.
+        </p>
+
+        <h2>Änderungen</h2>
+        <p>
+          Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen.
+          Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.
+        </p>
+
+        <a class="back-link" href="/">
+          <Icon name="arrowLeft" size={18} />
+          Zurück zur Startseite
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

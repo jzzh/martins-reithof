@@ -8,6 +8,7 @@ import {
   openingHours,
 } from "../data/site";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const mapQuery = encodeURIComponent(
   `${site.address.street}, ${site.address.zip} ${site.address.city}`
 );
@@ -145,7 +146,7 @@ const serviceOffers = offers.filter(
       <div class="about__media reveal">
         <img
           class="about__photo"
-          src="/images/martin-foto-2.png"
+          src={`${base}/images/martin-foto-2.png`}
           alt="Martin mit einem Pferd"
           width="293"
           height="465"

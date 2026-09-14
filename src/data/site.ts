@@ -13,7 +13,7 @@ export const site = {
   phoneStable: { label: "077 448 19 56", href: "tel:+41774481956", display: "077 448 19 56" },
   phoneMartin: { label: "076 606 76 21", href: "tel:+41766067621" },
   email: { label: "info@martins-reithof.ch", href: "mailto:info@martins-reithof.ch" },
-  instagram: { label: "Martin's Reithof", href: "https://www.instagram.com/" },
+  instagram: { label: "Martin's Reithof", href: "https://www.instagram.com/martinsreithof/" },
 };
 
 export const openingHours = [

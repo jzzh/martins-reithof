@@ -1,8 +1,10 @@
 import { defineConfig } from "astro/config";
 
+const base = process.env.BASE_PATH ?? "/";
+
 export default defineConfig({
-  site: "https://jzzh.github.io",
-  base: "/martins-reithof",
+  site: process.env.SITE_URL ?? "https://www.martins-reithof.ch",
+  base,
   build: {
     inlineStylesheets: "auto",
   },

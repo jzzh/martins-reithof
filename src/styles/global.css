@@ -1347,6 +1347,24 @@ h4 {
   color: var(--burgundy);
 }
 
+.portrait-photo {
+  margin: 1.6rem 0 0;
+  max-width: 300px;
+}
+
+.portrait-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.portrait-photo figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
 /* ==========================================================================
    Reveal on scroll
    ========================================================================== */

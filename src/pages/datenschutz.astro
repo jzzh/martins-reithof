@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import { site } from "../data/site";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -79,7 +81,7 @@ import { site } from "../data/site";
           Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.
         </p>
 
-        <a class="back-link" href="/">
+        <a class="back-link" href={`${base}/`}>
           <Icon name="arrowLeft" size={18} />
           Zurück zur Startseite
         </a>

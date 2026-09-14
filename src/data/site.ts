@@ -134,5 +134,6 @@ export const nav = [
   { label: "Angebote", href: "#angebote" },
   { label: "Preise", href: "#preise" },
   { label: "Öffnungszeiten", href: "#oeffnungszeiten" },
+  { label: "Galerie", href: "/galerie" },
   { label: "Kontakt", href: "#kontakt" },
 ];

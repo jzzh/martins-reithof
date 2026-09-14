@@ -100,7 +100,6 @@ export const offers: Offer[] = [
     icon: "gift",
     title: "Kindergeburtstage & Anlässe",
     text: "Ob Kindergeburtstag oder besonderer Anlass – wir stehen Ihnen gerne mit Rat und Tat zur Seite und finden gemeinsam das passende Angebot.",
-    cta: { label: "077 448 19 56", href: "tel:+41774481956" },
   },
 ];
 

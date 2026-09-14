@@ -91,7 +91,7 @@ export const offers: Offer[] = [
   {
     id: "pferde-mieten",
     icon: "horse",
-    title: "Pferde mieten",
+    title: "Pflegepferd",
     text: "Quasi ein eigenes Pferd: Miete ein Tier für einen längeren Zeitraum und übernimm Pflege, Betreuung und Training nach deinen Vorlieben – unter Einhaltung der Sicherheits- und Stallregeln.",
     highlight: "Unfall- und Haftpflichtversicherung ist Sache der Reitperson.",
   },

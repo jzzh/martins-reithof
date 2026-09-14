@@ -113,7 +113,7 @@ export const priceGroups: { title: string; note?: string; rows: PriceRow[] }[] =
     rows: [
       { label: "60 Minuten · 1 ReiterIn", price: "CHF 90.00" },
       { label: "60 Minuten · 2 ReiterInnen", price: "CHF 140.00" },
-      { label: "60 Minuten · ab 3 ReiterInnen", price: "CHF 60.00" },
+      { label: "60 Minuten · ab 3 ReiterInnen", price: "CHF 60.00 pro Person" },
     ],
   },
 ];

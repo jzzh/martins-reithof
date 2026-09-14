@@ -11,7 +11,6 @@ export const site = {
     country: "Schweiz",
   },
   phoneStable: { label: "077 448 19 56", href: "tel:+41774481956", display: "077 448 19 56" },
-  phoneMartin: { label: "076 606 76 21", href: "tel:+41766067621" },
   email: { label: "martinkopecky86@gmail.com", href: "mailto:martinkopecky86@gmail.com" },
   instagram: { label: "Martin's Reithof", href: "https://www.instagram.com/martinsreithof/" },
 };
@@ -68,9 +67,8 @@ export const offers: Offer[] = [
     details: [
       "CHF 60.00 inkl. Zvieri",
       "Mitnehmen: Reithelm oder Velohelm, festes Schuhwerk, Trinkflasche",
-      "Anmeldung bei Martin: 076 606 76 21",
     ],
-    cta: { label: "Jetzt anmelden", href: "tel:+41766067621" },
+    cta: { label: "Jetzt anmelden", href: "tel:+41774481956" },
     featured: true,
   },
   {

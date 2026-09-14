@@ -35,7 +35,7 @@ export interface Offer {
 export const offers: Offer[] = [
   {
     id: "ponyreiten",
-    icon: "heart",
+    icon: "horse",
     title: "Ponyreiten",
     text: "Für die Jüngsten stehen unsere braven und zuverlässigen Ponys und ausgewählten Pferde bereit. Die Kinder lernen spielerisch und mit viel Spass den Umgang mit den Tieren.",
     highlight: "Fördert Selbstbewusstsein, Koordination und Beweglichkeit.",
@@ -52,11 +52,6 @@ export const offers: Offer[] = [
     icon: "compass",
     title: "Ausritt",
     text: "Geführte Ausritte für Einsteiger und Geübte – raus aus dem Stall und hinein in die Natur rund um Rümlang.",
-    details: [
-      "60 Minuten · 1 ReiterIn — CHF 90.–",
-      "60 Minuten · 2 ReiterInnen — CHF 140.–",
-      "60 Minuten · ab 3 ReiterInnen — CHF 60.– pro Person",
-    ],
   },
   {
     id: "ponyclub",
@@ -65,10 +60,8 @@ export const offers: Offer[] = [
     text: "Abwechslungsreiches Programm für alle ponybegeisterten Kinder von 5–12 Jahren: Ausreiten, Reitstunden, Springen, Voltige, Gymkhana und Theorie.",
     highlight: "Jeden Mittwoch, 13:30 – 16:00 Uhr",
     details: [
-      "CHF 60.00 inkl. Zvieri",
       "Mitnehmen: Reithelm oder Velohelm, festes Schuhwerk, Trinkflasche",
     ],
-    cta: { label: "Jetzt anmelden", href: "tel:+41774481956" },
     featured: true,
   },
   {
@@ -88,7 +81,7 @@ export const offers: Offer[] = [
   },
   {
     id: "pferde-mieten",
-    icon: "horse",
+    icon: "handHeart",
     title: "Pflegepferd",
     text: "Quasi ein eigenes Pferd: Miete ein Tier für einen längeren Zeitraum und übernimm Pflege, Betreuung und Training nach deinen Vorlieben – unter Einhaltung der Sicherheits- und Stallregeln.",
     highlight: "Unfall- und Haftpflichtversicherung ist Sache der Reitperson.",

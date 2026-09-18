@@ -10,7 +10,7 @@
 **Ziele der Website**
 - Zentrale Anlaufstelle: Alle Infos aus den Flyern digital, immer aktuell
 - Mehr Anmeldungen (Ponyclub, Reitlager, Geburtstage) & Anrufe
-- Lokale Sichtbarkeit (Google-Suche «Reithof Rümlang / Zürich Unterland»)
+- Lokale Sichtbarkeit (Google-Suche «Reithof Zürich-Rümlang / Zürich Unterland»)
 
 **Zielgruppen (nach Priorität)**
 1. Eltern mit Kindern (5–12 J.) → Ponyreiten, Ponyclub, Reitlager, Geburtstage
@@ -72,12 +72,12 @@ Mobile First: Burger-Menü, grosse Touch-CTAs («Anrufen», «WhatsApp», «Anme
 
 ### 4.1 Hero / Start
 - Grosses Emotionsbild (Kinder auf Ponys / Weide)
-- Claim z. B.: *«Reiterhof in Rümlang – Fairness · Respekt · Leidenschaft»*
+- Claim z. B.: *«Reiterhof in Zürich-Rümlang – Fairness · Respekt · Leidenschaft»*
 - 2 CTAs: «Unsere Angebote» / «Kontakt & Anfahrt»
 
 ### 4.2 Über uns / Der Hof
 - Inhaber: **Martin Kopecký**
-- Kurztext: Kleiner, familiärer Reiterhof in Rümlang (ZH); Ponys & Pferde für
+- Kurztext: Kleiner, familiärer Reiterhof in Zürich-Rümlang (ZH); Ponys & Pferde für
   Einsteiger bis Fortgeschrittene; spielerischer, angstfreier Umgang mit Pferden
 - Werte-Badges: Fairness · Respekt · Leidenschaft
 
@@ -155,7 +155,7 @@ Herbst 2026 mit Countdown/Plätze-Hinweis). Später pflegbar ohne Entwickler
 - Optimiert (WebP, lazy loading); einheitliche Bildgrößen
 
 ### 4.7 Kontakt & Anfahrt
-- **Adresse:** Katzenrütistrasse 324, 8153 Rümlang
+- **Adresse:** Katzenrütistrasse 324, 8153 Zürich-Rümlang
 - **Telefon:** 077 448 19 56 (Hof/allgemein) · 076 606 76 21 (Martin direkt:
   Ponyclub, Reitlager)
 - **E-Mail:** info@martins-reithof.ch
@@ -191,11 +191,11 @@ Herbst 2026 mit Countdown/Plätze-Hinweis). Später pflegbar ohne Entwickler
 
 ## 6. SEO & Auffindbarkeit (lokal)
 
-- Titel/Meta: «Reiterhof & Ponyreiten in Rümlang ZH | Martin's Reithof»
+- Titel/Meta: «Reiterhof & Ponyreiten in Zürich-Rümlang ZH | Martin's Reithof»
 - **Google Business Profile** anlegen (Kategorie: Reiterhof/Ponyreiten),
   Fotos, Öffnungszeiten, Bewertungen
-- Lokale Keywords: Ponyreiten Rümlang, Reitlager Zürich, Ponyspazieren,
-  Reitstunden Bülach/Embrach/Rümlang
+- Lokale Keywords: Ponyreiten Zürich-Rümlang, Reitlager Zürich, Ponyspazieren,
+  Reitstunden Bülach/Embrach/Zürich-Rümlang
 - Strukturierte Daten: `LocalBusiness`/`SportsActivityLocation`,
   `Event` fürs Reitlager
 - Klare Telefon-Links (`tel:`) – viele Anfragen kommen mobil
@@ -228,7 +228,7 @@ Herbst 2026 mit Countdown/Plätze-Hinweis). Später pflegbar ohne Entwickler
 
 | Kanal | Wert | Quelle |
 |---|---|---|
-| Adresse | Katzenrütistrasse 324, 8153 Rümlang | alle Flyer |
+| Adresse | Katzenrütistrasse 324, 8153 Zürich-Rümlang | alle Flyer |
 | Telefon (Hof) | 077 448 19 56 | Öffnungszeiten, Preisliste, Pferde mieten, Ponyreiten |
 | Telefon (Martin) | 076 606 76 21 | Ponyclub, Reitlager |
 | E-Mail | info@martins-reithof.ch | Flyer «Pferde mieten» |

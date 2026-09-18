@@ -7,7 +7,7 @@ export const site = {
   address: {
     street: "Katzenrütistrasse 324",
     zip: "8153",
-    city: "Rümlang",
+    city: "Zürich-Rümlang",
     country: "Schweiz",
   },
   phoneStable: { label: "077 448 19 56", href: "tel:+41774481956", display: "077 448 19 56" },
@@ -51,7 +51,7 @@ export const offers: Offer[] = [
     id: "ausritt",
     icon: "compass",
     title: "Ausritt",
-    text: "Geführte Ausritte für Einsteiger und Geübte – raus aus dem Stall und hinein in die Natur rund um Rümlang.",
+    text: "Geführte Ausritte für Einsteiger und Geübte – raus aus dem Stall und hinein in die Natur rund um Zürich-Rümlang.",
   },
   {
     id: "ponyclub",

@@ -14,6 +14,7 @@ const mapQuery = encodeURIComponent(
 );
 const mapEmbed = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
 const mapLink = `https://maps.google.com/?q=${mapQuery}`;
+const showHerbstlager = false;
 
 const ponyclub = offers.find((o) => o.id === "ponyclub")!;
 const reitlager = offers.find((o) => o.id === "reitlager")!;
@@ -46,8 +47,8 @@ const serviceOffers = offers.filter(
     </div>
   </section>
 
-  <!-- ===================== AKTUELLES / REITLAGER ===================== -->
-  <section class="section" id="aktuelles">
+  <!-- Set to true to show the Herbstlager announcement again. -->
+  {showHerbstlager && <section class="section" id="aktuelles">
     <div class="container">
       <div class="event reveal">
         <div>
@@ -97,7 +98,7 @@ const serviceOffers = offers.filter(
         </div>
       </div>
     </div>
-  </section>
+  </section>}
 
   <!-- ===================== ÜBER UNS ===================== -->
   <section class="section" id="ueber-uns">
@@ -146,7 +147,7 @@ const serviceOffers = offers.filter(
       <div class="about__media reveal">
         <img
           class="about__photo"
-          src={`${base}/images/martin-ueber-uns.jpeg`}
+          src={`${base}/images/martin-neu.webp`}
           alt="Martin mit einem Pferd"
           width="1086"
           height="1412"

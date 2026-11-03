@@ -119,11 +119,9 @@ export const priceGroups: { title: string; note?: string; rows: PriceRow[] }[] =
 ];
 
 export const nav = [
-  { label: "Aktuelles", href: "#aktuelles" },
   { label: "Über uns", href: "#ueber-uns" },
-  { label: "Angebote", href: "#angebote" },
   { label: "Preise", href: "#preise" },
-  { label: "Öffnungszeiten", href: "#oeffnungszeiten" },
   { label: "Galerie", href: "/galerie" },
+  { label: "Pferde", href: "/pferde" },
   { label: "Kontakt", href: "#kontakt" },
 ];

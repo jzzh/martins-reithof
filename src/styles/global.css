@@ -437,7 +437,7 @@ h4 {
       rgba(18, 29, 51, 0.78) 100%
     ),
     radial-gradient(920px 680px at 8% 30%, rgba(18, 29, 51, 0.6), transparent 68%),
-    url("/images/header-neu.webp") center bottom / cover no-repeat;
+    url("/images/hero-header-neu.webp") center bottom / cover no-repeat;
   overflow: hidden;
 }
 

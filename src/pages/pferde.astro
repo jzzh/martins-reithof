@@ -3,7 +3,33 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const horses = Array.from({ length: 28 }, (_, index) => index + 1);
+
+const horses = [
+  "Antje",
+  "Asterix",
+  "Ballerina",
+  "Bella",
+  "Donna",
+  "Ellay",
+  "Enzo",
+  "Flitz",
+  "Folie",
+  "Hawaii",
+  "Heiko",
+  "Idefix",
+  "Jana",
+  "Kilusha",
+  "Lucille",
+  "Luna",
+  "Nancy",
+  "Nora",
+  "Norina",
+  "Obelix",
+  "Primrose",
+  "Princess",
+  "Sarah",
+  "Texas",
+];
 ---
 
 <Layout
@@ -23,11 +49,11 @@ const horses = Array.from({ length: 28 }, (_, index) => index + 1);
   <section class="section">
     <div class="container">
       <div class="gallery horse-gallery">
-        {horses.map((number) => (
+        {horses.map((name) => (
           <figure class="gallery__item">
             <img
-              src={`${base}/images/DropboxReithof/Pferdebilder/pferd-${number}.webp`}
-              alt={`Pferd ${number} vom Martin's Reithof`}
+              src={`${base}/images/Pferde/${name}.webp`}
+              alt={`${name} vom Martin's Reithof`}
               loading="lazy"
               decoding="async"
             />

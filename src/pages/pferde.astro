@@ -71,11 +71,14 @@ const horses = [
 
 <style>
   .horse-gallery {
+    display: grid;
     grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .horse-gallery .gallery__item {
     align-self: start;
+    max-width: 100%;
     aspect-ratio: auto;
   }
 

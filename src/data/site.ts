@@ -121,7 +121,7 @@ export const priceGroups: { title: string; note?: string; rows: PriceRow[] }[] =
 export const nav = [
   { label: "Über uns", href: "#ueber-uns" },
   { label: "Preise", href: "#preise" },
-  { label: "Galerie", href: "/galerie" },
+  { label: "Hof", href: "/hof" },
   { label: "Pferde", href: "/pferde" },
   { label: "Kontakt", href: "#kontakt" },
 ];

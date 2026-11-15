@@ -5,8 +5,22 @@ import Icon from "../components/Icon.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const photos = [
-  { src: "/images/hof/reistall.webp", caption: "Reitstall" },
+  { src: "/images/hof/reitstall-schild.webp", caption: "Reitstall-Schild an der Strasse" },
+  { src: "/images/hof/hofeinfahrt.webp", caption: "Hofeinfahrt" },
+  { src: "/images/hof/hofplatz.webp", caption: "Hofplatz mit Birke" },
+  { src: "/images/hof/parkplatz.webp", caption: "Durchfahrt zum Stall" },
+  { src: "/images/hof/wohnhaus.webp", caption: "Stall, Birke und Sitzplatz" },
+  { src: "/images/hof/sitzplatz.webp", caption: "Sitzplatz unter der Birke" },
+  { src: "/images/hof/stall-fassade.webp", caption: "Stallgebäude" },
+  { src: "/images/hof/stall-eingang.webp", caption: "Stall von der Seite" },
+  { src: "/images/hof/stallgang.webp", caption: "Im Stall" },
+  { src: "/images/hof/sattelkammer.webp", caption: "Sattelkammer" },
+  { src: "/images/hof/unterstand.webp", caption: "Pferdeboxen" },
   { src: "/images/hof/reitplatz.webp", caption: "Reitplatz" },
+  { src: "/images/hof/reitplatz-eingang.webp", caption: "Eingang zum Sandplatz" },
+  { src: "/images/hof/paddock.webp", caption: "Sandplatz" },
+  { src: "/images/hof/misthaufen.webp", caption: "Misthaufen" },
+  { src: "/images/hof/martin-mit-rad.webp", caption: "Martin vor dem Stall" },
 ];
 ---
 
@@ -25,14 +39,16 @@ const photos = [
 
   <section class="section">
     <div class="container">
-      <div class="gallery">
+      <div class="gallery hof-gallery">
         {photos.map((photo) => (
           <figure class="gallery__item">
             <img
               src={`${base}${photo.src}`}
               alt={`${photo.caption} – Martin's Reithof`}
               loading="lazy"
+              decoding="async"
             />
+            <figcaption>{photo.caption}</figcaption>
           </figure>
         ))}
       </div>
@@ -44,3 +60,40 @@ const photos = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .hof-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.7rem, 2vw, 1.25rem);
+    align-items: stretch;
+  }
+
+  .hof-gallery .gallery__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hof-gallery .gallery__item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .hof-gallery .gallery__item figcaption {
+    padding: 0.55rem 0.75rem 0.7rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
+
+  @media (min-width: 900px) {
+    .hof-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
